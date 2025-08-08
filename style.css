@@ -1,0 +1,396 @@
+/* style.css */
+
+:root {
+    --primary-color: #8B0000; /* Dark Red/Maroon */
+    --secondary-color: #b01c1c; /* Slightly lighter red */
+    --text-color: #333; /* Default text color for light backgrounds */
+    --light-text-color: #f4f4f4; /* Changed to a light color for text on dark backgrounds */
+    --bg-color-light: #f9f9f9;
+    --dark-bg-color: #212121; /* Changed back to a dark color for hero section and image container */
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Corrected shadow color format */
+    /* Removed --profile-ring-color as it's no longer needed */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color-light);
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    color: var(--light-text-color); /* This will now be white */
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px; /* Space between links */
+}
+
+.nav-links a {
+    color: var(--light-text-color); /* This will now be white */
+    text-decoration: none;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--light-text-color); /* This will now be white */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--dark-bg-color); /* This will now be dark */
+    color: var(--light-text-color); /* This will now be white */
+    text-align: left; /* Align text to left */
+    padding: 80px 0; /* Adjust padding */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center content block horizontally */
+    min-height: 400px; /* Minimum height for hero section */
+}
+
+/* Remove overlay as it's not needed with text/image separation */
+.hero::before {
+    content: none; /* Remove the overlay */
+}
+
+.hero-content {
+    display: flex; /* Flexbox for the two columns */
+    align-items: center; /* Align items vertically in center */
+    justify-content: space-between; /* Space out text and image */
+    max-width: 960px; /* Constrain content width */
+    margin: 0 auto; /* Center content horizontally */
+    width: 100%; /* Take full width of parent */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.hero-text-content {
+    flex: 1; /* Adjusted flex to give more balanced columns */
+    padding-right: 40px; /* Space between text and image */
+    text-align: left;
+    min-width: 300px; /* Minimum width for text content */
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: 3.5em;
+    color: var(--light-text-color); /* This will now be white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: var(--light-text-color); /* This will now be white */
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align contact info to start */
+    gap: 15px; /* Space between contact items */
+}
+
+.contact-info span {
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+.contact-info a {
+    color: var(--light-text-color); /* This will now be white */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.hero-image-container {
+    flex: 1; /* Adjusted flex to give more balanced columns */
+    display: flex;
+    justify-content: flex-end; /* Push image to the right */
+    align-items: center; /* Center image vertically */
+    min-width: 250px; /* Minimum width for image container */
+    background-color: var(--dark-bg-color); /* This will now be dark */
+    padding: 15px; /* Padding inside the container to create the background effect */
+    border-radius: 8px; /* Slightly rounded corners for the rectangular block */
+    overflow: hidden; /* Ensure image is clipped within the rounded corners */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for the entire block */
+    position: relative; /* Keep for potential future needs, but not critical here */
+}
+
+/* Profile Picture Styling - Now rectangular and covers its container */
+.profile-pic {
+    width: 100%; /* Make image fill the container's width */
+    height: 100%; /* Make image fill the container's height */
+    border-radius: 0; /* Make it rectangular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center top; /* Adjusted to keep the face visible */
+    border: 5px solid var(--light-text-color); /* This will now be a light border */
+    box-shadow: none; /* Ensure no extra shadow */
+}
+
+/* Removed pseudo-element for circular background as it's no longer needed */
+/* .profile-pic::before { ... } */
+
+
+/* General Content Section Styling */
+.content-section {
+    padding-top: 20px; /* Add some space below the navbar */
+}
+
+section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.edu-item, .exp-item, .project-item, .research-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.edu-item:last-child, .exp-item:last-child, .project-item:last-child, .research-item:last-child {
+    border-bottom: none;
+}
+
+.exp-item ul, .certifications ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.exp-item ul li, .certifications ul li {
+    margin-bottom: 8px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    background-color: var(--bg-color-light);
+    margin-bottom: 8px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+/* Contact Page Specific Styles */
+.contact-page {
+    text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    flex: 1 1 250px; /* Allows items to grow and shrink, with a base width */
+    padding: 20px;
+    background-color: var(--bg-color-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.contact-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    margin: 0;
+}
+
+.contact-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 50px 20px; /* Adjust padding for smaller screens */
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .hero-text-content {
+        padding-right: 0;
+        margin-bottom: 30px; /* Space between text and image when stacked */
+    }
+
+    .hero-image-container {
+        justify-content: center; /* Center image when stacked */
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .contact-info {
+        justify-content: center; /* Center contact info when stacked */
+    }
+
+    .contact-info span {
+        display: block;
+        margin: 5px 0;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 0.9em;
+    }
+}
