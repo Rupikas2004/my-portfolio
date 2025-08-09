@@ -6,9 +6,9 @@
     --text-color: #333; /* Default text color for light backgrounds (like your section content) */
     --light-text-color: #f4f4f4; /* Light color for text on dark backgrounds (like navbar, hero text) */
     --bg-color-light: #f9f9f9; /* Light background for sections */
-    --dark-bg-color: #212121; /* Dark background for hero section and image container */
+    --dark-bg-color: #212121; /* Dark background for hero section, image container, and body */
     --border-color: #ddd;
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Corrected shadow color format */
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -16,8 +16,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--text-color); /* This will apply #333 to body text by default */
-    background-color: var(--dark-bg-color); /* Setting body background to dark */
+    color: var(--text-color); /* Default text color (dark) */
+    background-color: var(--dark-bg-color); /* Overall dark background for the page */
 }
 
 .container {
@@ -28,7 +28,7 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* This sets the red background */
     padding: 15px 0;
     box-shadow: 0 2px 5px var(--shadow-color);
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .site-title {
-    color: var(--light-text-color);
+    color: var(--light-text-color); /* This makes the site title white */
     text-decoration: none;
     font-size: 1.8em;
     font-weight: bold;
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--light-text-color);
+    color: var(--light-text-color); /* This makes the navigation links white */
     text-decoration: none;
     font-weight: 400;
     padding: 5px 0;
@@ -84,8 +84,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: var(--dark-bg-color); /* Dark background color for hero section */
-    color: var(--light-text-color); /* Hero text is light on dark background */
+    background-color: var(--dark-bg-color); /* Dark background for the hero section */
+    color: var(--light-text-color); /* Light text color for hero content */
     text-align: left; /* Align text to left */
     padding: 80px 0; /* Adjust padding */
     position: relative;
@@ -97,11 +97,11 @@ body {
 }
 
 .hero::before {
-    content: none; /* Remove the overlay */
+    content: none; /* Remove any potential overlay */
 }
 
 .hero-content {
-    display: flex; /* Flexbox for the two columns */
+    display: flex; /* Flexbox for the two columns (text and image) */
     align-items: center; /* Align items vertically in center */
     justify-content: space-between; /* Space out text and image */
     max-width: 960px; /* Constrain content width */
@@ -111,7 +111,7 @@ body {
 }
 
 .hero-text-content {
-    flex: 1; /* Adjusted flex to give more balanced columns */
+    flex: 1; /* Give balanced space */
     padding-right: 40px; /* Space between text and image */
     text-align: left;
     min-width: 300px; /* Minimum width for text content */
@@ -120,14 +120,14 @@ body {
 .hero h1 {
     margin: 0 0 10px;
     font-size: 3.5em;
-    color: var(--light-text-color);
+    color: var(--light-text-color); /* Light text color for H1 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
     font-size: 1.4em;
     margin-bottom: 20px;
-    color: var(--light-text-color);
+    color: var(--light-text-color); /* Light text color for paragraphs */
 }
 
 .contact-info {
@@ -140,10 +140,11 @@ body {
 .contact-info span {
     display: inline-block;
     font-size: 0.9em;
+    color: var(--light-text-color); /* Light text for contact info spans */
 }
 
 .contact-info a {
-    color: var(--light-text-color);
+    color: var(--light-text-color); /* Light text for contact info links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -153,46 +154,47 @@ body {
 }
 
 .hero-image-container {
-    flex: 1;
+    flex: 1; /* Give balanced space */
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 250px;
-    background-color: var(--dark-bg-color); /* This will now be dark */
-    padding: 15px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    justify-content: flex-end; /* Push image to the right */
+    align-items: center; /* Center image vertically */
+    min-width: 250px; /* Minimum width for image container */
+    background-color: var(--dark-bg-color); /* Dark background for the image container */
+    padding: 15px; /* Padding inside the container to create the background effect */
+    border-radius: 8px; /* Slightly rounded corners for the rectangular block */
+    overflow: hidden; /* Ensure image is clipped within the rounded corners */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for the entire block */
     position: relative;
 }
 
+/* Profile Picture Styling - Now rectangular and covers its container */
 .profile-pic {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    object-fit: cover;
-    object-position: center top;
-    border: 5px solid var(--light-text-color); /* Light border on dark background */
+    width: 100%; /* Make image fill the container's width */
+    height: 100%; /* Make image fill the container's height */
+    border-radius: 0; /* Make it rectangular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center top; /* Adjusted to keep the face visible */
+    border: 5px solid var(--light-text-color); /* Light border around the image */
     box-shadow: none;
 }
 
 
-/* General Content Section Styling */
+/* General Content Section Styling (for all HTML files) */
 .content-section {
     padding-top: 20px;
 }
 
 section {
-    background-color: var(--bg-color-light); /* Set section background to light */
+    background-color: var(--bg-color-light); /* Light background for content sections */
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--shadow-color);
-    color: var(--text-color); /* Set section text to dark */
+    color: var(--text-color); /* Dark text color for content sections */
 }
 
 h2 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Red headings */
     text-align: center;
     margin-bottom: 25px;
     font-size: 2.2em;
@@ -212,17 +214,26 @@ h2::after {
 }
 
 h3 {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Slightly lighter red for subheadings */
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.5em;
 }
 
-/* Ensure list items and general text in sections are readable */
+/* Ensure all text within light sections is dark and readable */
 section p,
-section ul li {
-    color: var(--text-color); /* Explicitly set to dark text color for readability */
+section ul li,
+.edu-item p,
+.exp-item p,
+.exp-item ul li,
+.project-item p,
+.research-item p,
+.certifications ul li,
+.skills-grid ul li,
+.contact-item p {
+    color: var(--text-color); /* Apply dark text color consistently */
 }
+
 
 .edu-item, .exp-item, .project-item, .research-item {
     margin-bottom: 20px;
@@ -239,9 +250,6 @@ section ul li {
     padding-left: 20px;
 }
 
-.exp-item ul li, .certifications ul li {
-    margin-bottom: 8px;
-}
 
 /* Skills Section */
 .skills-grid {
@@ -261,7 +269,6 @@ section ul li {
     padding: 8px 15px;
     border-radius: 5px;
     border: 1px solid var(--border-color);
-    color: var(--text-color); /* Skills list items text dark */
 }
 
 /* Contact Page Specific Styles */
@@ -283,16 +290,11 @@ section ul li {
     background-color: var(--bg-color-light); /* Contact items background light */
     border-radius: 8px;
     box-shadow: 0 2px 5px var(--shadow-color);
-    color: var(--text-color); /* Contact items text dark */
 }
 
 .contact-item h3 {
     color: var(--primary-color);
     margin-bottom: 10px;
-}
-
-.contact-item p {
-    margin: 0;
 }
 
 .contact-item a {
@@ -311,7 +313,7 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: var(--primary-color);
-    color: var(--light-text-color);
+    color: var(--light-text-color); /* Light text on primary color background */
     margin-top: 30px;
     font-size: 0.9em;
 }
