@@ -3,13 +3,12 @@
 :root {
     --primary-color: #8B0000; /* Dark Red/Maroon */
     --secondary-color: #b01c1c; /* Slightly lighter red */
-    --text-color: #333; /* Default text color for light backgrounds */
-    --light-text-color: #f4f4f4; /* Changed to a light color for text on dark backgrounds */
-    --bg-color-light: #f9f9f9;
-    --dark-bg-color: #212121; /* Changed back to a dark color for hero section and image container */
+    --text-color: #333; /* Default text color for light backgrounds (like your section content) */
+    --light-text-color: #f4f4f4; /* Light color for text on dark backgrounds (like navbar, hero text) */
+    --bg-color-light: #f9f9f9; /* Light background for sections */
+    --dark-bg-color: #212121; /* Dark background for hero section and image container */
     --border-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.1); /* Corrected shadow color format */
-    /* Removed --profile-ring-color as it's no longer needed */
 }
 
 body {
@@ -17,8 +16,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color-light);
+    color: var(--text-color); /* This will apply #333 to body text by default */
+    background-color: var(--dark-bg-color); /* Setting body background to dark */
 }
 
 .container {
@@ -41,7 +40,7 @@ body {
 }
 
 .site-title {
-    color: var(--light-text-color); /* This will now be white */
+    color: var(--light-text-color);
     text-decoration: none;
     font-size: 1.8em;
     font-weight: bold;
@@ -56,7 +55,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--light-text-color); /* This will now be white */
+    color: var(--light-text-color);
     text-decoration: none;
     font-weight: 400;
     padding: 5px 0;
@@ -69,7 +68,7 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: var(--light-text-color); /* This will now be white */
+    background-color: var(--light-text-color);
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease;
@@ -85,8 +84,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: var(--dark-bg-color); /* This will now be dark */
-    color: var(--light-text-color); /* This will now be white */
+    background-color: var(--dark-bg-color); /* Dark background color for hero section */
+    color: var(--light-text-color); /* Hero text is light on dark background */
     text-align: left; /* Align text to left */
     padding: 80px 0; /* Adjust padding */
     position: relative;
@@ -97,7 +96,6 @@ body {
     min-height: 400px; /* Minimum height for hero section */
 }
 
-/* Remove overlay as it's not needed with text/image separation */
 .hero::before {
     content: none; /* Remove the overlay */
 }
@@ -122,14 +120,14 @@ body {
 .hero h1 {
     margin: 0 0 10px;
     font-size: 3.5em;
-    color: var(--light-text-color); /* This will now be white */
+    color: var(--light-text-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
     font-size: 1.4em;
     margin-bottom: 20px;
-    color: var(--light-text-color); /* This will now be white */
+    color: var(--light-text-color);
 }
 
 .contact-info {
@@ -145,7 +143,7 @@ body {
 }
 
 .contact-info a {
-    color: var(--light-text-color); /* This will now be white */
+    color: var(--light-text-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -155,45 +153,42 @@ body {
 }
 
 .hero-image-container {
-    flex: 1; /* Adjusted flex to give more balanced columns */
+    flex: 1;
     display: flex;
-    justify-content: flex-end; /* Push image to the right */
-    align-items: center; /* Center image vertically */
-    min-width: 250px; /* Minimum width for image container */
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 250px;
     background-color: var(--dark-bg-color); /* This will now be dark */
-    padding: 15px; /* Padding inside the container to create the background effect */
-    border-radius: 8px; /* Slightly rounded corners for the rectangular block */
-    overflow: hidden; /* Ensure image is clipped within the rounded corners */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for the entire block */
-    position: relative; /* Keep for potential future needs, but not critical here */
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
-/* Profile Picture Styling - Now rectangular and covers its container */
 .profile-pic {
-    width: 100%; /* Make image fill the container's width */
-    height: 100%; /* Make image fill the container's height */
-    border-radius: 0; /* Make it rectangular */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    object-position: center top; /* Adjusted to keep the face visible */
-    border: 5px solid var(--light-text-color); /* This will now be a light border */
-    box-shadow: none; /* Ensure no extra shadow */
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center top;
+    border: 5px solid var(--light-text-color); /* Light border on dark background */
+    box-shadow: none;
 }
-
-/* Removed pseudo-element for circular background as it's no longer needed */
-/* .profile-pic::before { ... } */
 
 
 /* General Content Section Styling */
 .content-section {
-    padding-top: 20px; /* Add some space below the navbar */
+    padding-top: 20px;
 }
 
 section {
-    background-color: #fff;
+    background-color: var(--bg-color-light); /* Set section background to light */
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--shadow-color);
+    color: var(--text-color); /* Set section text to dark */
 }
 
 h2 {
@@ -221,6 +216,12 @@ h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.5em;
+}
+
+/* Ensure list items and general text in sections are readable */
+section p,
+section ul li {
+    color: var(--text-color); /* Explicitly set to dark text color for readability */
 }
 
 .edu-item, .exp-item, .project-item, .research-item {
@@ -255,11 +256,12 @@ h3 {
 }
 
 .skill-category ul li {
-    background-color: var(--bg-color-light);
+    background-color: var(--bg-color-light); /* Skills list items background light */
     margin-bottom: 8px;
     padding: 8px 15px;
     border-radius: 5px;
     border: 1px solid var(--border-color);
+    color: var(--text-color); /* Skills list items text dark */
 }
 
 /* Contact Page Specific Styles */
@@ -276,11 +278,12 @@ h3 {
 }
 
 .contact-item {
-    flex: 1 1 250px; /* Allows items to grow and shrink, with a base width */
+    flex: 1 1 250px;
     padding: 20px;
-    background-color: var(--bg-color-light);
+    background-color: var(--bg-color-light); /* Contact items background light */
     border-radius: 8px;
     box-shadow: 0 2px 5px var(--shadow-color);
+    color: var(--text-color); /* Contact items text dark */
 }
 
 .contact-item h3 {
@@ -313,6 +316,27 @@ footer {
     font-size: 0.9em;
 }
 
+/* Responsive Video Wrapper (if you decide to add video back) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100%) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Fallback background for video area */
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
@@ -328,21 +352,21 @@ footer {
     }
 
     .hero {
-        padding: 50px 20px; /* Adjust padding for smaller screens */
+        padding: 50px 20px;
         text-align: center;
     }
 
     .hero-content {
-        flex-direction: column; /* Stack items vertically on small screens */
+        flex-direction: column;
     }
 
     .hero-text-content {
         padding-right: 0;
-        margin-bottom: 30px; /* Space between text and image when stacked */
+        margin-bottom: 30px;
     }
 
     .hero-image-container {
-        justify-content: center; /* Center image when stacked */
+        justify-content: center;
     }
 
     .hero h1 {
@@ -354,7 +378,7 @@ footer {
     }
 
     .contact-info {
-        justify-content: center; /* Center contact info when stacked */
+        justify-content: center;
     }
 
     .contact-info span {
