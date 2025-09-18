@@ -1,3 +1,138 @@
+ <!doctype html>
+ <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="description" content="A modern, responsive website starter using only HTML and CSS.">
+     <title>Responsive Starter</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="./styles.css">
+   </head>
+   <body>
+     <header class="site-header">
+       <a class="brand" href="#home" aria-label="Homepage">
+         <span class="logo" aria-hidden="true">◎</span>
+         <span class="brand-name">Acme</span>
+       </a>
+ 
+       <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
+ 
+       <nav class="site-nav" aria-label="Primary">
+         <a href="#home">Home</a>
+         <a href="#features">Features</a>
+         <a href="#about">About</a>
+         <a href="#contact" class="button button--primary">Contact</a>
+       </nav>
+ 
+       <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true">
+         <span></span>
+       </label>
+     </header>
+ 
+     <main id="home" class="main">
+       <section class="section hero">
+         <div class="container hero__inner">
+           <div class="hero__content">
+             <h1>Build responsive websites fast</h1>
+             <p>A clean, accessible starter with semantic HTML and modern, fluid CSS. No JavaScript required for layout or navigation.</p>
+             <div class="actions">
+               <a href="#features" class="button button--primary">Explore Features</a>
+               <a href="#about" class="button button--ghost">Learn More</a>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       <section id="features" class="section">
+         <div class="container">
+           <header class="section__header">
+             <h2>Features</h2>
+             <p>Mobile‑first CSS, fluid typography, responsive grid, and accessible components.</p>
+           </header>
+           <div class="grid cards">
+             <article class="card">
+               <h3>Mobile‑first</h3>
+               <p>Designed from small to large screens using progressive enhancement.</p>
+             </article>
+             <article class="card">
+               <h3>Fluid Type</h3>
+               <p>Clamp‑based typography scales smoothly across viewports.</p>
+             </article>
+             <article class="card">
+               <h3>CSS‑only Nav</h3>
+               <p>Accessible hamburger menu powered with pure CSS.</p>
+             </article>
+             <article class="card">
+               <h3>Utility Classes</h3>
+               <p>Simple spacing and layout utilities for speed and clarity.</p>
+             </article>
+           </div>
+         </div>
+       </section>
+ 
+       <section id="about" class="section section--alt">
+         <div class="container about">
+           <div class="about__media" role="img" aria-label="Abstract gradient background"></div>
+           <div class="about__content">
+             <h2>About this starter</h2>
+             <p>Use this template as a foundation for marketing sites, portfolios, or landing pages. It emphasizes semantic HTML and sensible defaults.</p>
+             <ul>
+               <li>Semantic landmarks: header, nav, main, section, footer</li>
+               <li>Responsive grid using modern CSS</li>
+               <li>Color themes via CSS variables</li>
+             </ul>
+           </div>
+         </div>
+       </section>
+ 
+       <section id="contact" class="section">
+         <div class="container">
+           <header class="section__header">
+             <h2>Contact</h2>
+             <p>Have a question? Send a quick message.</p>
+           </header>
+           <form class="form" method="post" action="#" aria-label="Contact form">
+             <div class="form__row">
+               <div class="form__field">
+                 <label for="name">Name</label>
+                 <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+               </div>
+               <div class="form__field">
+                 <label for="email">Email</label>
+                 <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+               </div>
+             </div>
+             <div class="form__field">
+               <label for="message">Message</label>
+               <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+             </div>
+             <div class="actions">
+               <button type="submit" class="button button--primary">Send Message</button>
+             </div>
+           </form>
+         </div>
+       </section>
+     </main>
+ 
+     <footer class="site-footer">
+       <div class="container footer__inner">
+         <p>© <span id="year"></span> Acme Co. All rights reserved.</p>
+         <nav class="footer-nav" aria-label="Footer">
+           <a href="#features">Features</a>
+           <a href="#about">About</a>
+           <a href="#contact">Contact</a>
+         </nav>
+       </div>
+     </footer>
+ 
+     <script>
+       // Keep year current without depending on frameworks; no layout logic in JS.
+       document.getElementById('year').textContent = new Date().getFullYear();
+     </script>
+   </body>
+ </html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
